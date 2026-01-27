@@ -13,7 +13,7 @@ export default function Home() {
     sim.category.toLowerCase().includes(query.toLowerCase())
   );
 
-  const thumbUrl = (slug: string) => `https://phet.colorado.edu/sims/html/${slug}/assets/${slug}-128.png`;
+  const thumbUrl = (slug: string, version: string) => `https://phet.colorado.edu/sims/html/${slug}/${version}/${slug}-128.png`;
 
   return (
     <main className='min-h-screen bg-gray-50 px-4 py-12'>
@@ -42,7 +42,7 @@ export default function Home() {
             >
               <div className='p-6'>
                 <Image
-                  src={thumbUrl(sim.slug)}
+                  src={thumbUrl(sim.slug, sim.version)}
                   alt={`${sim.title} thumbnail`}
                   width={128}
                   height={128}
