@@ -5,18 +5,20 @@
 sis-phet-dev/
 ├── public/          # Static assets (images, favicons)
 ├── src/
-│   └── app/         # App Router pages/layouts
-│       ├── globals.css  # Tailwind + custom CSS
-│       ├── layout.tsx   # Root layout (html/body)
-│       ├── page.tsx     # Home page (/)
-│       └── ...          # Additional pages (e.g., /simulations/[id])
-├── docs/
-│   └── RAG/         # RAG documentation (01-08 .md guides)
-├── AGENTS.md        # Agent conventions
-├── package.json     # Deps & scripts
-├── next.config.ts   # React Compiler
-├── tsconfig.json    # Strict TS + @/ alias
-└── eslint.config.mjs # ESLint (Next.js/TS)
+│   ├── data/        # Sprint 1: simulations.ts (PhET list)
+│   ├── components/  # Sprint 1: PhetEmbed.tsx
+│   └── app/         # App Router
+│       ├── globals.css # Tailwind v4 + theme
+│       ├── layout.tsx  # Root (fonts/providers/dark)
+│       ├── page.tsx    # Home grid/search/tabs (client)
+│       └── sim/
+│           └── [slug]/
+│               └── page.tsx # Dynamic embed (SSG/metadata)
+├── docs/RAG/        # 01-08 guides
+├── AGENTS.md        # Agent rules
+├── next.config.ts   # React Compiler + images remote
+├── tsconfig.json    # Strict TS + @/*
+└── eslint.config.mjs
 ```
 
 ## App Router Flow

@@ -7,13 +7,15 @@ import { simulations } from '@/data/simulations';
 
 export default function Home() {
   const [query, setQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState('All');
 
+  const categories = Array.from(new Set(simulations.map((sim) => sim.category))).sort() as string[];
   const filteredSims = simulations.filter((sim) =>
-    sim.title.toLowerCase().includes(query.toLowerCase()) ||
-    sim.category.toLowerCase().includes(query.toLowerCase())
+    (activeCategory === 'All' || sim.category === activeCategory) &&
+    (sim.title.toLowerCase().includes(query.toLowerCase()) || sim.category.toLowerCase().includes(query.toLowerCase()))
   );
 
-  const thumbUrl = (slug: string, version: string) => `https://phet.colorado.edu/sims/html/${slug}/${version}/${slug}-128.png`;
+  const thumbUrl = (slug: string, version?: string) => `https://phet.colorado.edu/sims/html/${slug}/${version ?? 'latest'}/${slug}-128.png`;
 
   return (
     <main className='min-h-screen bg-gray-50 px-4 py-12'>
@@ -23,6 +25,31 @@ export default function Home() {
           Explore interactive science and math simulations from PhET, University of Colorado Boulder.
         </p>
 
+        <div className='mb-8 flex flex-wrap gap-2 justify-center'>
+          <button
+            onClick={() => setActiveCategory('All')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              activeCategory === 'All'
+                ? 'bg-blue-500 text-white shadow-md'
+                : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+            }`}
+          >
+            All
+          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === category
+                  ? 'bg-blue-500 text-white shadow-md'
+                  : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
         <div className='mb-8'>
           <input
             type='text'

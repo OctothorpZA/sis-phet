@@ -1,14 +1,20 @@
 # Component Reference
 
-## Current Components
+## Current Components (Sprint 1)
 ### RootLayout (src/app/layout.tsx)
-- Props: { children: React.ReactNode }
-- Features: Geist fonts, viewport, Tailwind, body classes (dark mode)
-- HTML structure: <html><body>{children}</body></html>
+- Props: Readonly<{ children: React.ReactNode }>
+- Features: Geist fonts, dark mode, metadata.
 
-### Home Page (src/app/page.tsx)
-- Renders: Hero with Next.js logo + Vercel link
-- Tailwind: Flex layout, gradients, buttons
+### Home (src/app/page.tsx) `'use client'`
+- Features: Sim grid (responsive 1-4 cols), search/filter, category tabs, thumbnails/hover.
+- State: query/activeCategory.
+
+### SimPage (src/app/sim/[slug]/page.tsx) `async`
+- Features: Embed iframe, dynamic metadata/SSG, notFound, back link.
+
+### PhetEmbed (src/components/PhetEmbed.tsx)
+- Props: url/title.
+- Features: Responsive (60.43% ratio), attribution link.
 
 ## Patterns for New Components
 - PascalCase, FC<Props>

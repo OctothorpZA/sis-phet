@@ -2,9 +2,9 @@
 
 ## Nice-to-Haves (Sprint 1 Optional / Sprint 2)
 From Sprint 1 plan & Grok review:
-- **Category Tabs/Filter**: Dropdown/tabs for Physics/Chemistry/etc. (low effort, high UX).
+- **~Category Tabs/Filter~**: ✓ Completed Sprint 1 (tabs + search).
 - **Advanced Search**: By title + description/keywords (fuse.js client-side).
-- **Card Animations**: Hover scale/shadow, smooth transitions.
+- **~Card Animations~**: ✓ Hover scale/shadow in Sprint 1.
 - **PWA Support**: Manifest + service worker for offline sim list (embeds online-only).
 - **Loading States**: Skeleton cards, embed lazy-load feedback.
 

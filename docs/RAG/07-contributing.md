@@ -17,7 +17,7 @@
 - [ ] Performance (no console.time warnings)
 
 ## Adding Features
-- New page: `src/app/simulations/page.tsx`
+- New page: `src/app/sim/[slug]/page.tsx`
 - API: `src/app/api/sim/route.ts`
 - Tests: Add Vitest, `npm i -D vitest`
 

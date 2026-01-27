@@ -14,11 +14,11 @@ This is a development environment for SIS (Scientific Interactive Simulations) u
 - **Compiler**: React Compiler enabled
 - **No Tests**: To be added (recommend Vitest + RTL)
 
-### Key Features (Current)
-- Responsive layout with Tailwind
-- Dark mode support
-- Optimized images/fonts
-- Metadata for SEO
+### Key Features (Sprint 1 PoC MVP)
+- PhET grid/search/category tabs (11 sims responsive)
+- Dynamic embeds SSG (/sim/[slug]/page.tsx)
+- Versioned thumbs (next/image optimized)
+- Dark mode/dynamic metadata
 
 ### Future Expansion
 - Interactive simulations (PhET-style Canvas/WebGL)
