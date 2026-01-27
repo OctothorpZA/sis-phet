@@ -1,0 +1,31 @@
+# Project Overview
+
+## SIS-PhET Development
+This is a development environment for SIS (Scientific Interactive Simulations) using PhET-style interactive simulations, bootstrapped with Next.js 16 App Router.
+
+### Tech Stack
+- **Framework**: Next.js 16.1.5 (App Router)
+- **UI Library**: React 19.2.3
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript (strict mode)
+- **Linting**: ESLint (Next.js config with Core Web Vitals)
+- **Build**: Next.js SWC / Turbopack
+- **Fonts**: next/font/google (Geist Sans/Mono)
+- **Compiler**: React Compiler enabled
+- **No Tests**: To be added (recommend Vitest + RTL)
+
+### Key Features (Current)
+- Responsive layout with Tailwind
+- Dark mode support
+- Optimized images/fonts
+- Metadata for SEO
+
+### Future Expansion
+- Interactive simulations (PhET-style Canvas/WebGL)
+- Simulation controls, data export
+- Multi-language support
+- Simulation library
+
+See AGENTS.md for agent guidelines.
+
+Last updated: $(date)
