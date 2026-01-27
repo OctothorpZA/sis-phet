@@ -9,7 +9,8 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Readonly<Props>): Promise<Metadata> {
-  const sim = simulations.find((s) => s.slug === params.slug);
+  const { slug } = await params;
+  const sim = simulations.find((s) => s.slug === slug);
   if (!sim) {
     return { title: 'Simulation Not Found' };
   }
@@ -23,8 +24,9 @@ export async function generateStaticParams() {
   return simulations.map((sim) => ({ slug: sim.slug }));
 }
 
-export default function SimPage({ params }: Readonly<Props>) {
-  const sim = simulations.find((s) => s.slug === params.slug);
+export default async function SimPage({ params }: Readonly<Props>) {
+  const { slug } = await params;
+  const sim = simulations.find((s) => s.slug === slug);
 
   if (!sim) {
     notFound();
