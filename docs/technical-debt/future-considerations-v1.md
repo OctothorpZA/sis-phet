@@ -8,7 +8,7 @@ From Sprint 1 plan & Grok review:
 - **PWA Support**: Manifest + service worker for offline sim list (embeds online-only).
 - **Loading States**: Skeleton cards, embed lazy-load feedback.
 
-## Sprint 2 Priorities (Pure Next.js)
+## Sprint 3 Priorities (Pure Next.js)
 - **Auth**: Clerk (recommended: fast UI/dashboard) or Supabase/Auth.js.
   - Login/signup, profile (name/avatar/school).
   - Protected routes (favorites).
@@ -32,7 +32,7 @@ From Sprint 1 plan & Grok review:
 - Offline: Self-host sim zips? (legal/maintenance heavy).
 - Admin: Sim curation DB, upload custom.
 
-## Providers Comparison (Sprint 2 Auth)
+## Providers Comparison (Sprint 3 Auth)
 | Provider | Pros | Cons | Free Tier |
 |----------|------|------|-----------|
 | Clerk | UI components, dashboard, social | $ | 10k MAU |
