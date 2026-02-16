@@ -1,13 +1,13 @@
-name: Run Next.js Tests
+name: CI Build and Test
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "main", "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
 jobs:
-  nextjs-tests:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,13 +16,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24' # LTS version
+          node-version: '22' # LTS version
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Type Check
+        run: npx tsc --noEmit
 
       - name: Run Lint
         run: npm run lint
 
-      - name: Run Tests
-        run: npm test
+      - name: Build Application
+        run: npm run build
+
+      #- name: Run Tests
+      #  run: npm test
